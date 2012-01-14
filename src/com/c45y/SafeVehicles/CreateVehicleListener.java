@@ -1,4 +1,4 @@
-package c45y.dev.SafeVehicles;
+package com.c45y.SafeVehicles;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -23,10 +23,10 @@ public class CreateVehicleListener extends VehicleListener{
 			if (block != Material.STATIONARY_WATER && block != Material.WATER) {
 				block = BoatLoc.getWorld().getBlockAt(BoatLoc).getType();
 				if (block != Material.STATIONARY_WATER && block != Material.WATER) {
-					if (plugin.getConfig().getBoolean("SaftVehicles.Remove.Minecart")) {
+					if (plugin.getConfig().getBoolean("SafeVehicles.Remove.Minecart")) {
 						event.getVehicle().remove();
 						plugin.log.info("Boat removed from " + BoatLoc.getBlockX() + "-" +BoatLoc.getBlockY() + "-" +BoatLoc.getBlockZ() + " [" + block.name() + "]");
-						if (plugin.getConfig().getBoolean("SaftVehicles.Drop.Minecart")) {
+						if (plugin.getConfig().getBoolean("SafeVehicles.Drop.Minecart")) {
 							BoatLoc.getWorld().dropItem(BoatLoc,new ItemStack(Material.BOAT, 1));
 						}
 					}
@@ -39,10 +39,10 @@ public class CreateVehicleListener extends VehicleListener{
 			if (block != Material.RAILS && block != Material.POWERED_RAIL && block != Material.DETECTOR_RAIL) {
 				block = CartLoc.getWorld().getBlockAt(CartLoc).getType();
 				if (block != Material.RAILS && block != Material.POWERED_RAIL && block != Material.DETECTOR_RAIL) {
-					if (plugin.getConfig().getBoolean("SaftVehicles.Remove.Minecart")) {
+					if (plugin.getConfig().getBoolean("SafeVehicles.Remove.Minecart")) {
 						event.getVehicle().remove();
 						plugin.log.info("Minecart removed from " + CartLoc.getBlockX() + "-" +CartLoc.getBlockY() + "-" +CartLoc.getBlockZ() + " [" + block.name() + "]");
-						if (plugin.getConfig().getBoolean("SaftVehicles.Drop.Minecart")) {
+						if (plugin.getConfig().getBoolean("SafeVehicles.Drop.Minecart")) {
 							CartLoc.getWorld().dropItem(CartLoc,new ItemStack(Material.MINECART, 1));
 						}
 					}

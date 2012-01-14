@@ -1,4 +1,4 @@
-package c45y.dev.SafeVehicles;
+package com.c45y.SafeVehicles;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -17,11 +17,11 @@ public class ExitVehicleListener extends VehicleListener{
 	}
 
 	public void onVehicleExit(VehicleExitEvent event){
-		if (plugin.getConfig().getBoolean("SaftVehicles.OnExit.Removeonly")) {
+		if (plugin.getConfig().getBoolean("SafeVehicles.OnExit.Removeonly")) {
 			event.getVehicle().remove();
 			return;
 		}
-		if (plugin.getConfig().getBoolean("SaftVehicles.OnExit.Drop")) {
+		if (plugin.getConfig().getBoolean("SafeVehicles.OnExit.Drop")) {
 			event.getVehicle().remove();
 			Location Loc = event.getVehicle().getLocation();
 			if ((event.getVehicle() instanceof Boat)) {
@@ -35,7 +35,7 @@ public class ExitVehicleListener extends VehicleListener{
 			}
 			return;
 		}
-		if (plugin.getConfig().getBoolean("SaftVehicles.OnExit.Inventory")) {
+		if (plugin.getConfig().getBoolean("SafeVehicles.OnExit.Inventory")) {
 			toInventoryVehicle(event);
 		}
 	}

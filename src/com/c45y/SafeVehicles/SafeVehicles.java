@@ -1,7 +1,6 @@
-package c45y.dev.SafeVehicles;
+package com.c45y.SafeVehicles;
 
 import java.util.logging.Logger;
-
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Event;
 import org.bukkit.plugin.PluginManager;
@@ -27,15 +26,14 @@ public class SafeVehicles extends JavaPlugin {
 
 	public void loadConfiguration(FileConfiguration config){
 		config.options().header("Header to be written");
-		config.addDefault("SaftVehicles.Remove.Minecart", false);
-		config.addDefault("SaftVehicles.Remove.Boat", false);
-		config.addDefault("SaftVehicles.Drop.Minecart", false);
-		config.addDefault("SaftVehicles.Drop.Boat", false);
-		config.addDefault("SaftVehicles.OnExit.Drop", false);
-		config.addDefault("SaftVehicles.OnExit.Removeonly", false);
-		config.addDefault("SaftVehicles.OnExit.Inventory", false);
+		config.addDefault("SafeVehicles.Remove.Minecart", false);
+		config.addDefault("SafeVehicles.Remove.Boat", false);
+		config.addDefault("SafeVehicles.Drop.Minecart", false);
+		config.addDefault("SafeVehicles.Drop.Boat", false);
+		config.addDefault("SafeVehicles.OnExit.Drop", false);
+		config.addDefault("SafeVehicles.OnExit.Removeonly", false);
+		config.addDefault("SafeVehicles.OnExit.Inventory", false);
 		config.options().copyDefaults(true);
 		saveConfig();
 	}
-
 }
